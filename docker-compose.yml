@@ -1,0 +1,17 @@
+version: "3.5"
+services:
+  image:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: react-front
+    networks:
+    - LAN
+    volumes:
+      - ./:/react
+    tty: true
+    stdin_open: true
+networks:
+  LAN:
+    driver: bridge
+    name: portal
